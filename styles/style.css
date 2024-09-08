@@ -11,6 +11,7 @@ html {
 :focus {
   outline: none;
   outline-offset: 0;
+  border: none;
 }
 
 .page {
@@ -107,7 +108,7 @@ ol {
   border-bottom: 1px solid #fff;
 }
 
-.search-form__textfield:focus {
+.search-form__textfield:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
@@ -140,10 +141,6 @@ ol {
   outline-offset: 1px;
 }
 
-.search-form__label:has(.search-form__textfield) {
-  text-decoration: none;
-}
-
 .search-form__pseudo-checkbox {
   width: 19px;
   height: 19px;
@@ -169,11 +166,17 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox {
 .content__list {
   position: relative;
   height: 298px;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
 .content__list::-webkit-scrollbar {
-  width: 0;
+  width: 5px;
+  height: 5px;
+}
+
+.content__list::-webkit-scrollbar-thumb {
+  background: #464646;
 }
 
 .title {
@@ -185,8 +188,8 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox {
 }
 
 .button {
+  font-family: inherit;
   width: 194px;
-  height: 34px;
   font-size: 18px;
   color: #fff;
   border: 1px solid #fff;
@@ -207,13 +210,13 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox {
   text-decoration: none;
 }
 
-.search-form__submit-button {
-  margin-top: 20px;
-}
-
-.search-form__submit-button:focus-visible {
+.button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
+}
+
+.search-form__submit-button {
+  margin-top: 20px;
 }
 
 .content__list-item {
@@ -281,4 +284,5 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox {
 
 .more-button {
   width: 100%;
+  padding: 5px 0;
 }
